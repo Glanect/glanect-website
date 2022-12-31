@@ -1,0 +1,170 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0b0633;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --site-gutter: 24px;
+  --color-glanect-white: #ffffff;
+  --color-glanect-dark-blue: #0b0633;
+  --color-glanect-orange: #ff4949;
+  --header-logo-height: 31px;
+}
+
+html,
+body {
+  background-color: var(--color-glanect-dark-blue);
+}
+
+html {
+  font-size: clamp(75%, 1.75vw, 16px);
+}
+
+.screen-reader-text {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Header */
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: var(--site-gutter);
+}
+
+.site-logo {
+  flex: 1;
+}
+
+.site-logo-text {
+  fill: var(--color-glanect-white);
+}
+
+.site-logo-icon {
+  fill: var(--color-glanect-white);
+}
+
+.site-nav {
+  color: var(--color-glanect-white);
+  font-family: 'Merriweather', serif;
+  font-size: 0.938rem;
+  /*font-size: clamp(12px, 2vw, 15px);*/
+}
+
+.site-nav-option-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.site-nav-option-item a {
+  padding: 0 1.25rem;
+  color: var(--color-glanect-white);
+  text-decoration: none;
+}
+
+.site-nav-option-item:last-child a {
+  padding-right: 0;
+}
+
+/* Main content */
+
+.site-container {
+  max-width: 775px;
+  margin: 0 auto;
+  padding: 0 var(--site-gutter);
+  line-height: 1.875rem;
+}
+
+/* Site intro */
+
+.section-intro {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: clamp(300px, 50vw, 500px);
+  padding-top: calc(var(--site-gutter) * 2 + var(--header-logo-height));
+  padding-bottom: calc(var(--site-gutter) * 2 + var(--header-logo-height));
+  box-sizing: border-box;
+}
+
+.section-intro .background {
+  position: absolute;
+  bottom: -5vw; /*-7.5%;*/
+  left: 50%;
+  width: max(100vw, 600px);
+  height: calc(100% + 5vw); /*107.5%;*/
+  background-color: var(--color-glanect-orange);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 min(85%, calc(100% - 10vw)));
+  transform: translateX(-50%);
+}
+
+.section-content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
