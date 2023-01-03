@@ -151,7 +151,7 @@ html {
   align-items: flex-end;
   width: 100%;
   height: clamp(300px, 50vw, 500px);
-  padding-top: var(--site-gutter-vertical);
+  padding-top: var(--site-gutter);
   padding-left: var(--site-gutter);
   padding-right: var(--site-gutter);
   color: var(--color-glanect-white);
@@ -206,6 +206,7 @@ html {
   position: relative;
   width: 30px;
   height: 23px;
+  margin-top: 5px;
   padding: 0;
   border: 0;
   cursor: pointer;
