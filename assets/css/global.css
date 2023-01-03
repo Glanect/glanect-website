@@ -182,22 +182,25 @@ html {
   bottom: 0;
   left: 0;
   width: 100%;
-  transform: rotate(40deg) translateX(0%) translateY(-110%);
   transition: transform var(--toggle-duration) var(--easing-quad-in);
   transition-delay: 0s;
+  transform: translateY(-110%);
 }
 .site-nav--drawer-open .site-nav__background-wrapper {
-  transform: translateX(-50%);
-  transition-delay: 0s;
-  transition-timing-function: var(--easing-quad-out);
+  transform: none;
 }
 
-.site-nav .site-nav__background {
-  width: 140%;
-  left: 80%;
-  top: -5vw;
-  height: calc(100% + 10vw);
+/*
+.nav-toggle-button-background {
+  position: absolute;
+  top: -50px;
+  right: -80px;
+  width: 200px;
+  height: 140px;
+  transform: rotate(45deg);
+  background: var(--color-glanect-mid-blue);
 }
+*/
 
 .nav-toggle-button {
   position: relative;
