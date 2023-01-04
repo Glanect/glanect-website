@@ -320,7 +320,12 @@
                   solutions would best suit you.
                 </p>
               </div>
-              <form class="contact-form" data-netlify="true" name="contact">
+              <form
+                class="contact-form"
+                data-netlify="true"
+                data-netlify-recaptcha="true"
+                name="contact"
+              >
                 <fieldset class="contact-form__fieldset">
                   <legend class="screen-reader-text">Your details</legend>
                   <div class="contact-form__field-wrapper">
@@ -362,6 +367,7 @@
                     >
                   </div>
                 </fieldset>
+                <div data-netlify-recaptcha="true"></div>
                 <button type="submit" class="contact-form__button">
                   Send message
                 </button>
