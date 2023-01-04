@@ -9,6 +9,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   min-height: 100%;
@@ -20,6 +24,11 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+.body-locked {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 img,
@@ -63,6 +72,7 @@ h6 {
   --header-logo-height: 31px;
   --font-title: 'Merriweather', serif;
   --content-padding-bottom: 2.5rem;
+  --nav-toggle-button-width: 30px;
   --easing-quad-in-out: cubic-bezier(0.5, 1, 0.89, 1);
   --easing-quad-in: cubic-bezier(0.11, 0, 0.5, 0);
   --easing-quad-out: cubic-bezier(0.5, 1, 0.89, 1);
@@ -138,14 +148,35 @@ html {
 }
 
 .site-nav {
-  --toggle-duration: 0.5s;
-  --toggle-duration-halved: 0.25s;
-  --nav-option-start: 0.2s;
-  --nav-option-duration: 0.2s;
-  --nav-option-stagger: 0.1s;
+  --toggle-duration: 0.25s;
+  --toggle-duration-halved: 0.125s;
+  --nav-option-start: 0.1s;
+  --nav-option-duration: 0.1s;
+  --nav-option-stagger: 0.05s;
   position: fixed;
   right: 0;
   top: 0;
+  width: 100%;
+  height: calc(
+    var(--site-gutter) + var(--site-gutter) + var(--header-logo-height)
+  );
+  color: var(--color-glanect-white);
+  font-family: var(--font-title);
+  font-size: 2.1875rem;
+  line-height: 3.75rem;
+}
+
+.site-nav--drawer-closed {
+  width: calc(var(--nav-toggle-button-width) + var(--site-gutter));
+  overflow: hidden;
+}
+
+.site-nav--drawer-open {
+  overflow: visible;
+}
+
+.site-nav__inner-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -154,10 +185,6 @@ html {
   padding-top: var(--site-gutter);
   padding-left: var(--site-gutter);
   padding-right: var(--site-gutter);
-  color: var(--color-glanect-white);
-  font-family: var(--font-title);
-  font-size: 2.1875rem;
-  line-height: 3.75rem;
 }
 
 .site-nav__dimmer {
@@ -188,6 +215,7 @@ html {
 }
 .site-nav--drawer-open .site-nav__background-wrapper {
   transform: none;
+  transition: transform var(--toggle-duration) var(--easing-quad-out);
 }
 
 /*
@@ -204,7 +232,7 @@ html {
 
 .nav-toggle-button {
   position: relative;
-  width: 30px;
+  width: var(--nav-toggle-button-width);
   height: 23px;
   margin-top: 5px;
   padding: 0;
@@ -318,9 +346,15 @@ html {
     display: block;
     width: auto;
     height: auto;
-    padding: 0;
     font-size: 0.938rem;
     line-height: inherit;
+  }
+
+  .site-nav__inner-wrapper {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0;
   }
 
   .site-nav__dimmer {

@@ -126,50 +126,63 @@
               </g>
             </svg>
           </h1>
-          <nav class="site-nav site-nav--drawer">
-            <div class="site-nav__dimmer"></div>
-            <div class="site-nav__background-wrapper">
+          <nav class="site-nav site-nav--drawer-closed js-site-nav-wrapper">
+            <div class="site-nav__inner-wrapper">
+              <div class="site-nav__dimmer js-site-nav-dimmer"></div>
               <div
-                class="site-nav__background site-section__background site-section__background--mid-blue site-section__background--bottom-down"
-              ></div>
-            </div>
-            <h2 class="screen-reader-text">Site navigation</h2>
-            <div class="nav-toggle-button-background"></div>
-            <button class="nav-toggle-button">
-              <span class="screen-reader-text">Toggle navigation</span>
-              <span class="nav-toggle-button__line-wrapper"
-                ><span
-                  class="nav-toggle-button__bar nav-toggle-button__top-bar"
-                ></span>
-                <span
-                  class="nav-toggle-button__bar nav-toggle-button__middle-bar"
-                >
+                class="site-nav__background-wrapper js-site-nav-background-wrapper"
+              >
+                <div
+                  class="site-nav__background site-section__background site-section__background--mid-blue site-section__background--bottom-down"
+                ></div>
+              </div>
+              <h2 class="screen-reader-text">Site navigation</h2>
+              <div class="nav-toggle-button-background"></div>
+              <button class="nav-toggle-button js-small-screen-nav-toggle">
+                <span class="screen-reader-text">Toggle navigation</span>
+                <span class="nav-toggle-button__line-wrapper"
+                  ><span
+                    class="nav-toggle-button__bar nav-toggle-button__top-bar"
+                  ></span>
                   <span
-                    class="nav-toggle-button__bar nav-toggle-button__middle-bar-inner"
+                    class="nav-toggle-button__bar nav-toggle-button__middle-bar"
+                  >
+                    <span
+                      class="nav-toggle-button__bar nav-toggle-button__middle-bar-inner"
+                    ></span>
+                  </span>
+                  <span
+                    class="nav-toggle-button__bar nav-toggle-button__bottom-bar"
                   ></span>
                 </span>
-                <span
-                  class="nav-toggle-button__bar nav-toggle-button__bottom-bar"
-                ></span>
-              </span>
-            </button>
-            <ul class="site-nav__option-list">
-              <li class="site-nav__option-item">
-                <a href="#" title="Our services" class="site-nav__option-link"
-                  >Our services</a
-                >
-              </li>
-              <li class="site-nav__option-item">
-                <a href="#" title="Our services" class="site-nav__option-link"
-                  >About us</a
-                >
-              </li>
-              <li class="site-nav__option-item">
-                <a href="#" title="Our services" class="site-nav__option-link"
-                  >Contact us</a
-                >
-              </li>
-            </ul>
+              </button>
+              <ul class="site-nav__option-list">
+                <li class="site-nav__option-item">
+                  <a
+                    href="#our-services"
+                    title="Our services"
+                    class="site-nav__option-link js-site-nav-link"
+                    >Our services</a
+                  >
+                </li>
+                <li class="site-nav__option-item">
+                  <a
+                    href="#about-us"
+                    title="Our services"
+                    class="site-nav__option-link js-site-nav-link"
+                    >About us</a
+                  >
+                </li>
+                <li class="site-nav__option-item">
+                  <a
+                    href="#contact-us"
+                    title="Our services"
+                    class="site-nav__option-link js-site-nav-link"
+                    >Contact us</a
+                  >
+                </li>
+              </ul>
+            </div>
           </nav>
         </div>
       </header>
@@ -185,7 +198,7 @@
           </div>
         </section>
 
-        <section class="section-services site-section">
+        <section class="section-services site-section" id="our-services">
           <div class="site-section__content">
             <h2 class="site-section__title">Our services</h2>
             <p class="site-section__intro">
@@ -249,7 +262,7 @@
           </div>
         </section>
 
-        <section class="section-about site-section">
+        <section class="section-about site-section" id="about-us">
           <div
             class="site-section__background site-section__background--mid-blue site-section__background--top-up-bottom-down"
           ></div>
@@ -295,7 +308,7 @@
           </div>
         </section>
 
-        <section class="section-contact site-section">
+        <section class="section-contact site-section" id="contact-us">
           <div class="site-section__content">
             <h2 class="site-section__title">Contact us</h2>
             <div class="section-contact__content-wrapper">
@@ -379,5 +392,81 @@
         </div>
       </footer>
     </div>
+    <script lang="javascript">
+      function App() {
+        const SMALL_SCREEN_WIDTH = 680;
+        let smallScreenNavToggle;
+        let siteNavWrapper;
+        let siteNavBackgroundWrapper;
+        let siteNavDimmer;
+        let siteBody;
+        let siteNavLinks;
+        let isSmallScreenNavOpen = false;
+        let isSmallScreen = false;
+
+        const init = () => {
+          siteBody = document.querySelector('body');
+          prepareMainNav();
+          onWindowResize();
+          window.addEventListener('resize', onWindowResize);
+        }
+
+        prepareMainNav = () => {
+          smallScreenNavToggle = document.querySelector('.js-small-screen-nav-toggle');
+          siteNavWrapper = document.querySelector('.js-site-nav-wrapper');
+          siteNavDimmer = document.querySelector('.js-site-nav-dimmer');
+          siteNavLinks = document.querySelectorAll('.js-site-nav-link');
+          siteNavBackgroundWrapper = document.querySelector('.js-site-nav-background-wrapper');
+          // Listen for UI interaction
+          smallScreenNavToggle.addEventListener('click', onSmallScreenNavTogglePress);
+          siteNavLinks.forEach(siteNavLink => siteNavLink.addEventListener('click', onSiteNavLinkPress));
+          siteNavBackgroundWrapper.addEventListener('transitionend', onSiteNavBackgroundTransitionEnd);
+          siteNavDimmer.addEventListener('click', onSmallScreenNavTogglePress);
+        }
+
+        const toggleSmallScreenNav = () => {
+          isSmallScreenNavOpen = !isSmallScreenNavOpen;
+          siteNavWrapper.classList.toggle('site-nav--drawer-open');
+          if (isSmallScreenNavOpen && isSmallScreen) {
+            siteBody.classList.add('body-locked');
+            siteNavWrapper.classList.remove('site-nav--drawer-closed');
+          } else if (!isSmallScreenNavOpen) {
+            siteBody.classList.remove('body-locked');
+          }
+        }
+
+        const checkForSmallScreen = () => {
+          if (window.innerWidth >= SMALL_SCREEN_WIDTH && isSmallScreen) {
+            isSmallScreen = false;
+            siteNavWrapper.classList.add('site-nav--drawer-closed');
+            if (isSmallScreenNavOpen) {
+              toggleSmallScreenNav();
+            }
+          } else if (window.innerWidth < SMALL_SCREEN_WIDTH && !isSmallScreen) {
+            isSmallScreen = true;
+          }
+        }
+
+        const onSmallScreenNavTogglePress = () => {
+          toggleSmallScreenNav();
+        }
+
+        const onSiteNavLinkPress = () => {
+          if (isSmallScreen) toggleSmallScreenNav();
+        }
+
+        const onSiteNavBackgroundTransitionEnd = () => {
+            if (!isSmallScreenNavOpen) siteNavWrapper.classList.add('site-nav--drawer-closed')
+        }
+
+        const onWindowResize = () => {
+          checkForSmallScreen();
+        }
+
+        init();
+      }
+
+      const app = new App();
+    </script>
   </body>
 </html>
