@@ -453,6 +453,20 @@ html {
   background-color: var(--color-glanect-orange);
 }
 
+.site-section__background-pattern {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  height: 120%;
+  opacity: 0.15;
+  transform: rotate(5.7deg) translate(-50%, -50%);
+  background-image: url('../images/design/background-pattern.png');
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  background-size: 125px 125px;
+}
+
 .site-section__background--mid-blue {
   background-color: var(--color-glanect-mid-blue);
 }
@@ -700,6 +714,7 @@ html {
   color: var(--color-glanect-white);
   border: 0;
   background-color: var(--color-glanect-mid-blue);
+  vertical-align: top;
 }
 
 .form-submitted .contact-form__message:invalid {
