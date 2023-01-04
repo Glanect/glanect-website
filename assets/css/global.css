@@ -676,6 +676,10 @@ html {
   background-color: var(--color-glanect-mid-blue);
 }
 
+.form-submitted .contact-form__detail:invalid {
+  background-color: var(--color-glanect-orange);
+}
+
 .contact-form__message:placeholder-shown:not(:focus),
 .contact-form__detail:placeholder-shown:not(:focus) {
   padding: 16px;
@@ -696,6 +700,16 @@ html {
   color: var(--color-glanect-white);
   border: 0;
   background-color: var(--color-glanect-mid-blue);
+}
+
+.form-submitted .contact-form__message:invalid {
+  background-color: var(--color-glanect-orange);
+}
+
+.contact-form__recaptcha-wrapper {
+  position: relative;
+  left: 2px;
+  padding: 0 0 10px 0;
 }
 
 .contact-form__button {

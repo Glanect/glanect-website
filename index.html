@@ -321,7 +321,7 @@
                 </p>
               </div>
               <form
-                class="contact-form"
+                class="contact-form js-contact-form"
                 data-netlify="true"
                 data-netlify-recaptcha="true"
                 name="contact"
@@ -331,10 +331,12 @@
                   <div class="contact-form__field-wrapper">
                     <input
                       type="text"
+                      minlength="2"
                       id="name"
                       name="name"
                       class="contact-form__detail"
                       placeholder=" "
+                      required
                     />
                     <label for="name" class="contact-form__label"
                       >Your name</label
@@ -342,11 +344,46 @@
                   </div>
                   <div class="contact-form__field-wrapper">
                     <input
+                      type="text"
+                      minlength="2"
+                      id="company-name"
+                      name="company-name"
+                      class="contact-form__detail"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="company-name" class="contact-form__label"
+                      >Company name</label
+                    >
+                  </div>
+                  <div class="contact-form__field-wrapper">
+                    <input
+                      type="text"
+                      inputmode="numeric"
+                      pattern="^\+?[0-9\s]*"
+                      minlength="10"
+                      maxlength="30"
+                      id="phone"
+                      name="phone"
+                      class="contact-form__detail"
+                      placeholder=" "
+                      required
+                      title="Must be a valid phone number"
+                    />
+                    <label for="phone" class="contact-form__label"
+                      >Your phone number</label
+                    >
+                  </div>
+                  <div class="contact-form__field-wrapper">
+                    <input
                       type="email"
                       id="email"
+                      inputmode="email"
                       name="email"
                       class="contact-form__detail"
                       placeholder=" "
+                      required
+                      title="Must be a valid email address"
                     />
                     <label for="email" class="contact-form__label"
                       >Your email</label
@@ -358,17 +395,25 @@
                   <div class="contact-form__field-wrapper">
                     <textarea
                       id="message"
+                      minlength="10"
                       name="message"
                       class="contact-form__message"
                       placeholder=" "
+                      required
                     ></textarea>
                     <label for="message" class="contact-form__label"
                       >Your message</label
                     >
                   </div>
                 </fieldset>
-                <div data-netlify-recaptcha="true"></div>
-                <button type="submit" class="contact-form__button">
+                <div
+                  data-netlify-recaptcha="true"
+                  class="contact-form__recaptcha-wrapper"
+                ></div>
+                <button
+                  type="submit"
+                  class="contact-form__button js-contact-form-button"
+                >
                   Send message
                 </button>
               </form>
@@ -407,12 +452,15 @@
         let siteNavDimmer;
         let siteBody;
         let siteNavLinks;
+        let contactForm;
+        let contactFormSubmitButton;
         let isSmallScreenNavOpen = false;
         let isSmallScreen = false;
 
         const init = () => {
           siteBody = document.querySelector('body');
           prepareMainNav();
+          prepareContactForm();
           onWindowResize();
           window.addEventListener('resize', onWindowResize);
         }
@@ -428,6 +476,12 @@
           siteNavLinks.forEach(siteNavLink => siteNavLink.addEventListener('click', onSiteNavLinkPress));
           siteNavBackgroundWrapper.addEventListener('transitionend', onSiteNavBackgroundTransitionEnd);
           siteNavDimmer.addEventListener('click', onSmallScreenNavTogglePress);
+        }
+
+        prepareContactForm = () => {
+          contactForm = document.querySelector('.js-contact-form');
+          contactFormSubmitButton = document.querySelector('.js-contact-form-button');
+          contactFormSubmitButton.addEventListener('click', onContactFormSubmitAttempt);
         }
 
         const toggleSmallScreenNav = () => {
@@ -463,6 +517,10 @@
 
         const onSiteNavBackgroundTransitionEnd = () => {
             if (!isSmallScreenNavOpen) siteNavWrapper.classList.add('site-nav--drawer-closed')
+        }
+
+        const onContactFormSubmitAttempt = () => {
+          contactForm.classList.add('form-submitted');
         }
 
         const onWindowResize = () => {
