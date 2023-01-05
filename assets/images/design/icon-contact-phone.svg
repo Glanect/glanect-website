@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 106 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1.24592,0,0,2.97839,2427.9,-1910.38)" fill="#ff4949">
+        <g transform="matrix(0.799701,0.334531,-1.87136,0.782826,156.493,939.503)">
+            <clipPath id="_clip1">
+                <path d="M-1736.06,386.345l45.903,-15.842l3.791,-11.099l-99.388,0l3.791,11.099l45.903,15.842Z"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(0.599782,-4.63732e-17,-1.46082e-16,-0.259516,-2271.65,2736.77)">
+                    <path d="M892.978,9076.54l33.988,34.694l-12.982,19.955l-42.012,0l-12.982,-19.955l33.988,-34.694Z"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(0.799701,0.334531,-1.87136,0.782826,201.197,956.799)">
+            <clipPath id="_clip2">
+                <path d="M-1736.06,386.345l45.903,-15.842l3.791,-11.099l-99.388,0l3.791,11.099l45.903,15.842Z"/>
+            </clipPath>
+            <g clip-path="url(#_clip2)">
+                <g transform="matrix(0.599782,-4.63732e-17,-1.46082e-16,-0.259516,-2271.65,2736.77)">
+                    <path d="M892.978,9076.54l33.988,34.694l-12.982,19.955l-42.012,0l-12.982,-19.955l33.988,-34.694Z"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(0.807803,0,0,0.33792,-1996.86,-145.235)">
+            <path d="M142.7,2419.05c-8.769,7.948 -20.401,12.792 -33.155,12.792c-27.264,0 -49.398,-22.134 -49.398,-49.398c-0,-12.754 4.844,-24.386 12.792,-33.155l12.723,12.724c-4.707,5.496 -7.552,12.634 -7.552,20.431c-0,17.35 14.085,31.435 31.435,31.435c7.797,0 14.935,-2.845 20.431,-7.552l12.724,12.723Z"/>
+        </g>
+    </g>
+</svg>
