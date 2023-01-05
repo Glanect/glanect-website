@@ -864,8 +864,6 @@ html {
 
 .contact-form__button {
   position: relative;
-  display: flex;
-  flex-direction: column;
   width: 150px;
   padding: 0;
   font-family: var(--font-title);
