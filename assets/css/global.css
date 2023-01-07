@@ -63,7 +63,7 @@ h6 {
 }
 
 :root {
-  --site-gutter-vertical: 40px;
+  --site-gutter-large: 40px;
   --site-gutter: 24px;
   --color-glanect-white: #ffffff;
   --color-glanect-dark-blue: #0b0633;
@@ -111,6 +111,13 @@ html {
 
 .wide-content-wrapper--align-right {
   justify-content: flex-end;
+}
+
+@media (min-width: 680px) {
+  .wide-content-wrapper {
+    padding-left: var(--site-gutter-large);
+    padding-right: var(--site-gutter-large);
+  }
 }
 
 /* Header */
@@ -332,7 +339,7 @@ html {
 
 @media (min-width: 680px) {
   .site-header {
-    padding-top: var(--site-gutter-vertical);
+    padding-top: var(--site-gutter-large);
   }
 
   .site-header__content-wrapper {
@@ -476,7 +483,7 @@ html {
 
 .site-section--reduced-padding {
   padding-top: 30px;
-  padding-bottom: var(--site-gutter-vertical);
+  padding-bottom: var(--site-gutter-large);
 }
 
 .site-section__background {
@@ -605,7 +612,7 @@ html {
   padding: 8px 10px 12px 10px;
 }
 
-@media (min-width: 420px) {
+@media (min-width: 480px) {
   .site-section__title {
     grid-column: 2 / 10;
   }
@@ -619,6 +626,13 @@ html {
   }
 }
 
+@media (min-width: 680px) {
+  .page-container {
+    padding-left: var(--site-gutter-large);
+    padding-right: var(--site-gutter-large);
+  }
+}
+
 /* Site intro */
 
 .section-intro {
@@ -627,7 +641,7 @@ html {
   width: 100%;
   height: clamp(300px, 50vw, 500px);
   padding-top: calc(
-    var(--site-gutter-vertical) + var(--site-gutter) + var(--header-logo-height)
+    var(--site-gutter-large) + var(--site-gutter) + var(--header-logo-height)
   );
   padding-bottom: calc(var(--site-gutter) * 2 + var(--header-logo-height));
   box-sizing: border-box;
@@ -682,7 +696,7 @@ html {
   align-items: center;
 }
 
-@media (min-width: 420px) {
+@media (min-width: 480px) {
   .service-item {
     grid-column: 2 / 10;
   }
@@ -778,7 +792,7 @@ html {
   margin-top: 8px;
 }
 
-@media (min-width: 420px) {
+@media (min-width: 480px) {
   .section-contact__content-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column: 2 / 10;
