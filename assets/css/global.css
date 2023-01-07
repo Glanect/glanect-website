@@ -846,6 +846,11 @@ html {
   border: 0;
   background-color: var(--color-glanect-mid-blue);
 }
+.contact-form__message:-webkit-autofill + .contact-form__label,
+.contact-form__detail:-webkit-autofill + .contact-form__label {
+  color: black; /* Co-operate with the forced autofill colors in Chromium */
+  opacity: 1;
+}
 
 .form-submitted .contact-form__detail:invalid {
   background-color: var(--color-glanect-orange);
