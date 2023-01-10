@@ -525,14 +525,22 @@ html {
   background-color: var(--color-glanect-orange);
 }
 
+.site-section__background-pattern-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 150%;
+  will-change: transform;
+}
 .site-section__background-pattern {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 0;
   width: 120%;
-  height: 120%;
+  height: 100%;
   opacity: 0.15;
-  transform: rotate(5.7deg) translate(-50%, -50%);
+  transform: rotate(5.7deg) translate(-50%, 0);
   background-image: url('../images/design/background-pattern.png');
   background-repeat: repeat;
   background-position: 50% 50%;

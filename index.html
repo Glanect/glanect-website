@@ -212,7 +212,13 @@
           <div
             class="site-section__background site-section__background--orange site-section__background--bottom-down"
           >
-            <div class="site-section__background-pattern"></div>
+            <div
+              class="js-intro-background site-section__background-pattern-wrapper"
+            >
+              <div
+                class="js-intro-background site-section__background-pattern"
+              ></div>
+            </div>
           </div>
           <div class="section-intro__content-wrapper">
             <h2 class="section-intro__title">
@@ -342,20 +348,13 @@
             <h2 class="site-section__title">About us</h2>
             <p class="site-section__body-copy">
               Our mission is to help businesses grow by providing reliable
-              long-term solutions and building trustworthy relationships with
-              our clients. With a team of
-              <strong>over 15 years of experience</strong> in fortune 250
-              companies across various industries. We have delivered numerous
-              successful nationwide and global projects/programmes across
-              <strong>technology integration</strong>,
-              <strong>company change</strong>,
-              <strong>cross-culture management</strong>,
-              <strong>digital marketing</strong>,
-              <strong>company expansion</strong>,
-              <strong>business consulting for start-ups</strong>, and
-              <strong>international business brokerage</strong>. We are
-              passionate about supporting your business and taking it to the
-              next level.
+              <strong>long-term solutions</strong> and building
+              <strong>trustworthy relationships</strong> with our clients. We
+              have a team with <strong>over 15 years of experience</strong> in
+              Fortune 250 companies across various industries ready to deliver
+              successful nationwide and global projects/programmes. We are
+              <strong>passionate</strong> about supporting your business and
+              taking it to the next level.
             </p>
             <figure class="site-section__captioned-image">
               <img
@@ -381,6 +380,11 @@
               <strong>easy to adopt</strong> at every level of the business.
               This means your team can be transformed into the technological
               world with minimum training, saving you time and money.
+            </p>
+            <p class="site-section__body-copy">
+              Our customer porfolio includes businesses across a number of
+              industries, including e-commerce, warehousing, logistics,
+              technology, HR, food brands, and restaurants.
             </p>
             <p class="site-section__body-copy">
               If you are looking for a solution to
@@ -586,94 +590,6 @@
         </div>
       </footer>
     </div>
-    <script lang="javascript">
-      function App() {
-        const SMALL_SCREEN_WIDTH = 680;
-        let smallScreenNavToggle;
-        let siteNavWrapper;
-        let siteNavBackgroundWrapper;
-        let siteNavDimmer;
-        let siteBody;
-        let siteNavLinks;
-        let contactForm;
-        let contactFormSubmitButton;
-        let isSmallScreenNavOpen = false;
-        let isSmallScreen = false;
-
-        const init = () => {
-          siteBody = document.querySelector('body');
-          prepareMainNav();
-          prepareContactForm();
-          onWindowResize();
-          window.addEventListener('resize', onWindowResize);
-        }
-
-        prepareMainNav = () => {
-          smallScreenNavToggle = document.querySelector('.js-small-screen-nav-toggle');
-          siteNavWrapper = document.querySelector('.js-site-nav-wrapper');
-          siteNavDimmer = document.querySelector('.js-site-nav-dimmer');
-          siteNavLinks = document.querySelectorAll('.js-site-nav-link');
-          siteNavBackgroundWrapper = document.querySelector('.js-site-nav-background-wrapper');
-          // Listen for UI interaction
-          smallScreenNavToggle.addEventListener('click', onSmallScreenNavTogglePress);
-          siteNavLinks.forEach(siteNavLink => siteNavLink.addEventListener('click', onSiteNavLinkPress));
-          siteNavBackgroundWrapper.addEventListener('transitionend', onSiteNavBackgroundTransitionEnd);
-          siteNavDimmer.addEventListener('click', onSmallScreenNavTogglePress);
-        }
-
-        prepareContactForm = () => {
-          contactForm = document.querySelector('.js-contact-form');
-          contactFormSubmitButton = document.querySelector('.js-contact-form-button');
-          contactFormSubmitButton.addEventListener('click', onContactFormSubmitAttempt);
-        }
-
-        const toggleSmallScreenNav = () => {
-          isSmallScreenNavOpen = !isSmallScreenNavOpen;
-          siteNavWrapper.classList.toggle('site-nav--drawer-open');
-          if (isSmallScreenNavOpen && isSmallScreen) {
-            siteBody.classList.add('body-locked');
-            siteNavWrapper.classList.remove('site-nav--drawer-closed');
-          } else if (!isSmallScreenNavOpen) {
-            siteBody.classList.remove('body-locked');
-          }
-        }
-
-        const checkForSmallScreen = () => {
-          if (window.innerWidth >= SMALL_SCREEN_WIDTH && isSmallScreen) {
-            isSmallScreen = false;
-            siteNavWrapper.classList.add('site-nav--drawer-closed');
-            if (isSmallScreenNavOpen) {
-              toggleSmallScreenNav();
-            }
-          } else if (window.innerWidth < SMALL_SCREEN_WIDTH && !isSmallScreen) {
-            isSmallScreen = true;
-          }
-        }
-
-        const onSmallScreenNavTogglePress = () => {
-          toggleSmallScreenNav();
-        }
-
-        const onSiteNavLinkPress = () => {
-          if (isSmallScreen) toggleSmallScreenNav();
-        }
-
-        const onSiteNavBackgroundTransitionEnd = () => {
-            if (!isSmallScreenNavOpen) siteNavWrapper.classList.add('site-nav--drawer-closed')
-        }
-
-        const onContactFormSubmitAttempt = () => {
-          contactForm.classList.add('form-submitted');
-        }
-
-        const onWindowResize = () => {
-          checkForSmallScreen();
-        }
-
-        init();
-      }
-
-      const app = new App();
-    </script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
