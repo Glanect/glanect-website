@@ -659,8 +659,8 @@ html {
 
 .section-intro__title {
   font-family: var(--font-title);
-  font-size: clamp(20px, 4vw, 35px);
-  line-height: clamp(32px, 6vw, 50px);
+  font-size: clamp(20px, 4vw, 46px);
+  line-height: clamp(32px, 6vw, 66px);
   text-align: center;
 }
 
