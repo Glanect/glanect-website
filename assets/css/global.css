@@ -577,12 +577,12 @@ html {
   padding-bottom: 3.75rem;
 }
 
-.site-section__body-copy {
+.site-section__long-form-copy p {
   grid-column: 1 / 11;
   padding-bottom: var(--content-padding-bottom);
 }
 
-.site-section__body-copy strong {
+.site-section p strong {
   color: var(--color-glanect-orange);
 }
 
@@ -629,7 +629,7 @@ html {
     grid-column: 2 / 10;
   }
 
-  .site-section__body-copy {
+  .site-section__long-form-copy p {
     grid-column: 2 / 10;
   }
 }
