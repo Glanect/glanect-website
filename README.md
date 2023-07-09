@@ -1,2 +1,2 @@
 # Glanect-Website
-The website for glanect.com, hosted by Vercel
+The website for glanect.com, hosted on Netlify.
