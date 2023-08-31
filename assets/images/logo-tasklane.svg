@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 411 414" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Logo">
+        <path d="M0.219,0C0.219,0 -8.916,83.362 90.725,100.527L156.407,99.961C156.407,99.961 149.169,0.011 69.28,0.011C46.147,0.011 0.219,0 0.219,0Z" style="fill:rgb(255,71,71);"/>
+        <path d="M156.468,0C156.468,0 149.895,81.335 244.712,100.527L410.865,100.527C410.865,100.527 415.108,19.59 323.385,0L156.468,0Z" style="fill:rgb(255,71,71);"/>
+        <path d="M245.812,410.895C300.228,417.015 245.812,410.895 245.812,410.895L381.578,410.895C378.474,324.842 293.912,311.159 293.912,311.159L254.668,310.746L253.69,174.266C225.194,89.288 156.504,99.941 156.504,99.941L156.407,102.838L156.504,329.263C158.454,349.298 187.324,404.317 245.812,410.895Z" style="fill:rgb(255,71,71);"/>
+    </g>
+</svg>
