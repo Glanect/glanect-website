@@ -853,6 +853,23 @@ html {
   line-height: 1.5625rem;
 }
 
+.service-item__title a {
+  color: var(--color-glanect-orange);
+  text-decoration: none;
+  transition: color 0.15s linear;
+}
+.service-item__title a:hover {
+  color: var(--color-glanect-white);
+}
+
+.service-item__description a {
+  color: var(--color-glanect-orange);
+  transition: color 0.15s linear;
+}
+.service-item__description a:hover {
+  color: var(--color-glanect-white);
+}
+
 .service-item__image-wrapper {
   display: flex;
   grid-column: 1 / 3;
