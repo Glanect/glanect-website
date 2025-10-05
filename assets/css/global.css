@@ -630,6 +630,18 @@ html {
   color: #252525;
 }
 
+.site-section__subtitle {
+  grid-column: 1 / 11;
+  padding-bottom: var(--content-padding-bottom);
+  color: var(--color-glanect-white);
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
 .site-section__intro {
   grid-column: 1 / 11;
   padding-bottom: 3.75rem;
@@ -676,6 +688,21 @@ html {
   position: relative;
   display: block;
   padding: 8px 10px 12px 10px;
+}
+
+.site-section__support-logos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.site-section__support-logos__logo {
+  width: calc(50% - 12px);
+  max-width: 200px;
+  min-width: 100px;
 }
 
 @media (min-width: 480px) {
