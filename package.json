@@ -1,0 +1,12 @@
+{
+  "name": "glanect-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The website for Glanect.com",
+  "scripts": {},
+  "author": "Chris Bews",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20"
+  }
+}
