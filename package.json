@@ -7,6 +7,6 @@
   "author": "Chris Bews",
   "license": "ISC",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   }
 }
